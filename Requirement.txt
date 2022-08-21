@@ -1,0 +1,23 @@
+front end should be simple
+can use template for front end
+backend php & mysql
+user will enter pincode and according to that specific mechanic will appear
+
+
+
+
+entites:
+user
+mechanic
+parts
+
+User sign up and sign in:
+mechanic sign up and sign in:
+
+User: id, name, email, pincode, contact,
+
+mechanic: id, mame, email, pincode ,contact , photo
+
+parts : p_id, name, price
+
+insert into mechanic (id,name,email,pincode,contact,pic) values(02,"Haa\r","haar@email.com",140012,15246432,load_file('E:/xampp/htdocs/go mechanic/mec 2.png'));
