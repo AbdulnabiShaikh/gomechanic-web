@@ -45,21 +45,21 @@
 			<main class="main-content">
 				<div class="hero hero-slider">
 					<ul class="slides">
-						<li data-bg-image="home_image.png">
+						<li data-bg-image="pics/home_image.png">
 							<div class="container">
 								<h2 class="slide-title">Place the header here</h2>
 								<p class="slide-desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, <br> totam rem aperiam eaque ipsa quae ab illo inventore veritatis.</p>
 								<a href="#" class="button">Read more</a>
 							</div>
 						</li>
-						<li data-bg-image="rover.png">
+						<li data-bg-image="pics/rover.png">
 							<div class="container">
 								<h2 class="slide-title">Place the slide 2 header here</h2>
 								<p class="slide-desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, <br> totam rem aperiam eaque ipsa quae ab illo inventore veritatis.</p>
 								<a href="#" class="button">Read more</a>
 							</div>
 						</li>
-						<li data-bg-image="parts.png">
+						<li data-bg-image="pics/parts.png">
 							<div class="container">
 								<h2 class="slide-title">Place third slide header here</h2>
 								<p class="slide-desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, <br> totam rem aperiam eaque ipsa quae ab illo inventore veritatis.</p>
