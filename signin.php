@@ -8,7 +8,7 @@ session_start();
 	if($_SERVER['REQUEST_METHOD'] == "POST")
 	{
 		$email = $_POST['email'];
-		$password = $_POST['password'];
+		$password = md5($_POST['password']);
 
 		if(!empty($email) && !empty($password) && !is_numeric($email))
 		{
@@ -22,6 +22,7 @@ session_start();
 				{
 
 					$user_data = mysqli_fetch_assoc($result);
+					$user_data['password'] = $password;
 					
 					if($user_data['password'] === $password)
 					{

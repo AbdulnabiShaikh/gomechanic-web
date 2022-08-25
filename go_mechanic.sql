@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 21, 2022 at 05:37 PM
+-- Generation Time: Aug 25, 2022 at 03:20 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -34,6 +34,13 @@ CREATE TABLE `contactform` (
   `website` varchar(255) NOT NULL,
   `message` varchar(2000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `contactform`
+--
+
+INSERT INTO `contactform` (`id`, `name`, `email`, `website`, `message`) VALUES
+(1, 'Abdulnabi Shaikh', 'sk.nabi0612@gmail.com', 'www.gomechanic.com', 'lorem300');
 
 -- --------------------------------------------------------
 
@@ -78,17 +85,16 @@ CREATE TABLE `user` (
   `name` varchar(500) NOT NULL,
   `email` varchar(500) NOT NULL,
   `contact` int(10) NOT NULL,
-  `password` varchar(20) NOT NULL,
-  `confirmpassword` varchar(20) NOT NULL
+  `password` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `name`, `email`, `contact`, `password`, `confirmpassword`) VALUES
-(1, 'Abdulnabi ', 'ab@email.com', 0, '456', '456'),
-(2, 'shaikh', 'editor@email.com', 0, '@45m', '@45m');
+INSERT INTO `user` (`id`, `name`, `email`, `contact`, `password`) VALUES
+(1, 'Shaikh Abdulnabi ', 'editor@email.com', 123456789, '61b4a64be663682e8cb0'),
+(2, 'Nabi', 'fake@email.com', 987654321, 'e4da3b7fbbce2345d777');
 
 --
 -- Indexes for dumped tables
@@ -110,7 +116,8 @@ ALTER TABLE `mechanic`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -120,7 +127,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `contactform`
 --
 ALTER TABLE `contactform`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `mechanic`

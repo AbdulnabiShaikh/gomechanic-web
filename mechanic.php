@@ -1,3 +1,12 @@
+<?php
+    $connection = mysqli_connect("localhost","root","");
+    $db = mysqli_select_db($connection,'go_mechanic');
+
+    $distinct_pincode_query = "SELECT DISTINCT(pincode) as pin FROM mechanic";
+    $distinct_pincode = mysqli_query($connection, $distinct_pincode_query);
+    $pincodes = mysqli_fetch_all($distinct_pincode);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,7 +70,13 @@
                         <div class="col-md-5">
 								<form action="#" method="POST" class="contact-form">
 									<input type="text" name="name" id="name" placeholder="Name...">
-									<input type="number" id="pincode" name="pincode" placeholder="Pin Code..." maxlength="6">
+									<!-- <input type="number" id="pincode" name="pincode" placeholder="Pin Code..." maxlength="6"> -->
+                                    <select name="pincode" id="">
+                                        <option value="">Select One</option>
+                                        <?php foreach($pincodes as $pincode): ?>
+                                            <option value="<?= $pincode[0] ?>"><?= $pincode[0] ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
 						
 									<div class="text-right">
                                         <button class="btn_go" type="submit" value="submit" name="submit" style="margin-right:10pc;">Get Mechanic</button>

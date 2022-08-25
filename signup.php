@@ -11,12 +11,12 @@ session_start();
 		$name = $_POST['name'];
 		$number= $_POST['number'];
 		$email = $_POST['email'];
-		$password = $_POST['password'];
-		$confirmpassword = $_POST['confirmpassword'];
+		$password = md5($_POST['password']);
+		$confirmpassword = md5($_POST['confirmpassword']);
 
-		if(!empty($name) && !empty($password) && !is_numeric($name))
+		if(!empty($name) && !empty($password) && !is_numeric($name) && $password == $confirmpassword)
 		{
-			$query = "insert into user (id,name,email,contact,password,confirmpassword) values ('0','$name','$email','$contact','$password','$confirmpassword')";
+			$query = "insert into user (id,name,email,contact,password) values ('0','$name','$email','$number','$password')";
 
 			mysqli_query($con, $query);
 
@@ -94,7 +94,7 @@ session_start();
                         <div class="col-md-5">
 								<form action="#" method="POST" class="contact-form">
 									<input type="text" id="name" name="name" placeholder="Name...">
-                                    <input type="number" name="contact" id="contact" name="contact" placeholder="Contact..." maxlength="10">
+                                    <input type="number" name="number" id="number" name="number" placeholder="Contact..." maxlength="10">
 									<input type="email" id="email" name="email" placeholder="Email...">
 									<input type="password" id="password" name="password" placeholder="Password..." maxlength="08">
 									<input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password...">
